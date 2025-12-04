@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://elineclean.com/sitemap.xml

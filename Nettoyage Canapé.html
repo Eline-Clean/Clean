@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nettoyage canapé à Metz | Éline Clean</title>
+<meta name="description" content="Nettoyage professionnel de canapés à Metz et environs : aspiration, traitement des taches et désinfection.">
+<link rel="icon" href="Logo.jfif">
+<style>
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family: 'Montserrat', sans-serif; color:#222; scroll-behavior:smooth; }
+
+header {
+  position: fixed; top:0; left:50%; transform:translateX(-50%);
+  width:100%; max-width:1200px;
+  background:rgba(255,255,255,0.97);
+  border-bottom:3px solid #0095f6;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:15px 25px; z-index:1000;
+}
+header h1 { font-size:1.4em; color:#0095f6; }
+nav { display:flex; gap:25px; }
+nav a { color:#222; font-weight:500; text-decoration:none; transition:0.3s; }
+nav a:hover { color:#007ad1; }
+
+.service-page { max-width:1200px; margin:120px auto 50px auto; padding:0 20px; }
+.service-container { display:flex; gap:30px; align-items:flex-start; margin-bottom:50px; }
+.service-container img { width:45%; border-radius:12px; }
+.service-container .text { flex:1; }
+.service-container h1 { color:#0095f6; font-size:2em; margin-bottom:15px; }
+.service-container p { line-height:1.6; margin-bottom:20px; }
+
+form { max-width:700px; margin:50px auto; text-align:left; padding:20px; border:2px solid #ddd; border-radius:15px; background:#f9f9f9; }
+form h2 { color:#0095f6; margin-bottom:20px; }
+.form-group { margin-bottom:20px; }
+.form-group label { font-weight:600; color:#0095f6; display:block; margin-bottom:5px; }
+.form-group input, .form-group textarea { width:100%; padding:12px; border:2px solid #ddd; border-radius:10px; font-size:1em; }
+textarea { height:120px; resize:none; }
+.cta-button { display:inline-block; padding:12px 30px; margin-top:15px; background:#0095f6; color:white; font-weight:600; border-radius:50px; text-decoration:none; border:none; cursor:pointer; transition:0.3s; }
+.cta-button:hover { background:#007ad1; }
+
+footer { background:#111; color:#aaa; text-align:center; padding:25px 20px; }
+
+@media(max-width:900px){ .service-container { flex-direction:column; text-align:center; } .service-container img { width:80%; margin:auto; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1><img src="Logo.jfif" alt="Éline Clean" style="height:40px; vertical-align:middle;"> Éline Clean</h1>
+  <nav>
+    <a href="Elina clean.html">Accueil</a>
+    <a href="nettoyage canapé.html">Nettoyage canapé</a>
+    <a href="nettoyage bureaux.html">Nettoyage bureaux</a>
+    <a href="fin de chantier.html">Fin de chantier</a>
+    <a href="nettoyage airbnb.html">Airbnb</a>
+    <a href="creches.html">Crèches</a>
+    <a href="ephd.html">EHPAD</a>
+  </nav>
+</header>
+
+<section class="service-page">
+  <div class="service-container">
+    <img src="Image canapé.jpg" alt="Nettoyage canapé à Metz">
+    <div class="text">
+      <h1>Nettoyage canapé à Metz</h1>
+      <p>
+        Le nettoyage de canapé permet de redonner fraîcheur, propreté et confort à votre mobilier tout en prolongeant sa durée de vie. Cette prestation inclut l’aspiration en profondeur, le traitement des taches, le nettoyage à la vapeur ou par injection-extraction, ainsi que la désinfection des tissus. Éline Clean utilise des méthodes efficaces et adaptées à chaque type de matériau pour éliminer la poussière, les allergènes et les résidus du quotidien. Grâce à son savoir-faire, Éline Clean assure un résultat net et soigné.
+      </p>
+    </div>
+  </div>
+
+  <form id="contactForm" action="https://formspree.io/f/mkgdrpok" method="POST">
+    <h2>Demande de devis / contact</h2>
+    <input type="text" name="_gotcha" style="display:none">
+    <div class="form-group"><label>Email :</label><input type="email" name="email" required></div>
+    <div class="form-group"><label>Objet :</label><input type="text" name="objet" required></div>
+    <div class="form-group"><label>Numéro de téléphone :</label><input type="text" name="telephone" required></div>
+    <div class="form-group"><label>Message :</label><textarea name="message" required></textarea></div>
+    <button type="submit" class="cta-button">Envoyer</button>
+  </form>
+</section>
+
+<footer>© 2025 Éline Clean — Tous droits réservés</footer>
+
+<script>
+let startTime=Date.now();
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const email=document.querySelector("[name='email']").value.trim();
+  const tel=document.querySelector("[name='telephone']").value.trim();
+  const objet=document.querySelector("[name='objet']").value.trim();
+  const message=document.querySelector("[name='message']").value.toLowerCase();
+  if(Date.now()-startTime<1500){alert("Veuillez patienter 2 secondes avant d’envoyer.");return;}
+  if(!email.includes("@")||!email.includes(".")){alert("Veuillez entrer un email valide.");return;}
+  if(!/^[0-9\s+()-]{8,}$/.test(tel)){alert("Veuillez entrer un numéro de téléphone valide.");return;}
+  const forbidden=["http://","https://","www.","viagra","casino","porn","bitcoin","crypto","bank"];
+  for(let word of forbidden){if(message.includes(word)){alert("Votre message contient du texte non autorisé.");return;}}
+  const formData=new FormData();
+  formData.append('email',email);formData.append('objet',objet);formData.append('telephone',tel);formData.append('message',message);
+  fetch('https://formspree.io/f/mkgdrpok',{method:'POST',body:formData,headers:{'Accept':'application/json'}})
+  .then(response=>{if(response.ok){alert("Merci ! Votre message a été envoyé.");document.getElementById('contactForm').reset();}else{alert("Oups ! Une erreur est survenue.");}})
+  .catch(()=>{alert("Oups ! Une erreur est survenue.");});
+});
+</script>
+
+</body>
+</html>
